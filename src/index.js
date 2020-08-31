@@ -20,8 +20,17 @@ function getAllToys(){
     //  div.append(object.name)
      }) 
     //  document.body.innerHTML = object.id
+    like()
    })
 
+}
+
+function like(){
+const likeBtn = document.querySelector("button.like-btn");
+console.log(likeBtn)
+likeBtn.addEventListener("click", (e) => {
+  console.log(e)
+})
 }
 
 function submitData(name, image){
@@ -67,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let input = document.querySelector('input.input-text')
     let image = document.querySelector('input.input-text-image')
     // let input = document.querySelector('input.input-text')
-    console.log(input.value, "this is input")
-    console.log(e.currentTarget.value, "this is event")
+    // console.log(input.value, "this is input")
+    // console.log(e.currentTarget.value, "this is event")
     submitData(input.value, image.value)
     // submitData(name, image)
   });
