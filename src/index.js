@@ -1,6 +1,20 @@
 let addToy = false;
 
+function getAllToys(){
+  return fetch("http://localhost:3000/toys")
+  .then(function(response) {
+     return response.json();
+   })
+   .then(function(object) {
+     console.log(object);
+    //  document.body.innerHTML = object.id
+   })
+
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
+  getAllToys();
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
   addBtn.addEventListener("click", () => {
