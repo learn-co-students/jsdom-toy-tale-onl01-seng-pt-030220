@@ -15,7 +15,7 @@ function getAllToys(){
       div.className = "card"
       div.innerHTML = `<h2>${character.name}</h2><br>
       <img src=${character.image} class="toy-avatar" /><br><p>Likes: ${character.likes}</p><button class="like-btn">Like <3</button><br>`
-      console.log(collection, "this is collection")
+      // console.log(collection, "this is collection")
       collection.appendChild(div)
     //  div.append(object.name)
      }) 
@@ -60,10 +60,10 @@ function submitData(name, image){
 
 document.addEventListener("DOMContentLoaded", () => {
   getAllToys();
-  const btn = document.querySelector(".submit");
-  const submitBtn = document.querySelector("#new-toy-btn");
-  submitBtn.addEventListener("click", (e) => {
-    console.log(e)
+  const form = document.querySelector("form");
+  const addBtn = document.querySelector("#new-toy-btn");
+  form.addEventListener("submit", (e) => {
+    console.log(e.currentTarget.input, "this is event")
     // submitData(name, image)
   });
   const toyFormContainer = document.querySelector(".container");
