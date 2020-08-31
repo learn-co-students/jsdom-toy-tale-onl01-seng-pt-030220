@@ -6,16 +6,16 @@ function getAllToys(){
      return response.json();
    })
    .then(function(object) {
-     console.log(object);
-     let characters = object 
-     let collection = document.querySelector('toy-collection')
-     
+    //  console.log(object);
+     const characters = object
      characters.forEach(character =>{ 
-      console.log(character)
+      const collection = document.querySelector('#toy-collection')  
+      // console.log(character)
       let div = document.createElement('div');
       div.className = "card"
       div.innerHTML = `<h1>${character.name}</h1><br>
-      <img src=${character.image}><br><p>Likes: ${character.likes}</p><br>`
+      <img src=${character.image} style="width:200px;height:200px;"><br><p>Likes: ${character.likes}</p><br>`
+      console.log(collection, "this is collection")
       collection.appendChild(div)
     //  div.append(object.name)
      }) 
