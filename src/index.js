@@ -13,14 +13,47 @@ function getAllToys(){
       // console.log(character)
       let div = document.createElement('div');
       div.className = "card"
-      div.innerHTML = `<h1>${character.name}</h1><br>
-      <img src=${character.image} style="width:200px;height:200px;"><br><p>Likes: ${character.likes}</p><br>`
+      div.innerHTML = `<h2>${character.name}</h2><br>
+      <img src=${character.image} class="toy-avatar" /><br><p>Likes: ${character.likes}</p><button class="like-btn">Like <3</button><br>`
       console.log(collection, "this is collection")
       collection.appendChild(div)
     //  div.append(object.name)
      }) 
     //  document.body.innerHTML = object.id
    })
+
+}
+
+
+function submitData(name, image){
+
+  let formData = {
+      name: name,
+      image: image
+    };
+
+  let configObj = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(formData)
+        };
+         
+       return fetch("http://localhost:3000/toys", configObj)
+       .then(function(response) {
+          return response.json();
+        })
+        .then(function(object) {
+          console.log(object);
+          getAllToys(object)
+          // document.body.innerHTML = object.id
+        })
+        .catch(function(error) {
+          alert("Bad things! Ragnarők!");
+          console.log(error.message);
+        });
 
 }
 
