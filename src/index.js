@@ -65,9 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (e) => {
     event.preventDefault()
     let input = document.querySelector('input.input-text')
-    let input = document.querySelector('input.input-text')
+    let image = document.querySelector('input.input-text-image')
+    // let input = document.querySelector('input.input-text')
     console.log(input.value, "this is input")
     console.log(e.currentTarget.value, "this is event")
+    submitData(input.value, image.value)
     // submitData(name, image)
   });
   const toyFormContainer = document.querySelector(".container");
