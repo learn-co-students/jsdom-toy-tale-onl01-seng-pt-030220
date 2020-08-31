@@ -7,6 +7,15 @@ function getAllToys(){
    })
    .then(function(object) {
      console.log(object);
+     let characters = object 
+     let collection = document.querySelector('toy-collection')
+     
+     characters.forEach(character =>{ 
+      console.log(character)
+      let div = document.createElement('div');
+      div.className = "card"
+    //  div.append(object.name)
+     }) 
     //  document.body.innerHTML = object.id
    })
 
