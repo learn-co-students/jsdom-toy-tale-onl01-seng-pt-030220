@@ -60,10 +60,14 @@ function submitData(name, image){
 
 document.addEventListener("DOMContentLoaded", () => {
   getAllToys();
-  const form = document.querySelector("form");
+  const form = document.querySelector("form.add-toy-form");
   const addBtn = document.querySelector("#new-toy-btn");
   form.addEventListener("submit", (e) => {
-    console.log(e.currentTarget.input, "this is event")
+    event.preventDefault()
+    let input = document.querySelector('input.input-text')
+    let input = document.querySelector('input.input-text')
+    console.log(input.value, "this is input")
+    console.log(e.currentTarget.value, "this is event")
     // submitData(name, image)
   });
   const toyFormContainer = document.querySelector(".container");
