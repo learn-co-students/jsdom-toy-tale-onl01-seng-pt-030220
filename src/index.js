@@ -14,6 +14,9 @@ function getAllToys(){
       console.log(character)
       let div = document.createElement('div');
       div.className = "card"
+      div.innerHTML = `<h1>${character.name}</h1><br>
+      <img src=${character.image}><br><p>Likes: ${character.likes}</p><br>`
+      collection.appendChild(div)
     //  div.append(object.name)
      }) 
     //  document.body.innerHTML = object.id
