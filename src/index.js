@@ -24,12 +24,12 @@ function getAllToys(){
 
 }
 
-
 function submitData(name, image){
 
   let formData = {
       name: name,
-      image: image
+      image: image,
+      likes: 0
     };
 
   let configObj = {
@@ -60,7 +60,12 @@ function submitData(name, image){
 
 document.addEventListener("DOMContentLoaded", () => {
   getAllToys();
-  const addBtn = document.querySelector("#new-toy-btn");
+  const btn = document.querySelector(".submit");
+  const submitBtn = document.querySelector("#new-toy-btn");
+  submitBtn.addEventListener("click", (e) => {
+    console.log(e)
+    // submitData(name, image)
+  });
   const toyFormContainer = document.querySelector(".container");
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
