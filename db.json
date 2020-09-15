@@ -47,6 +47,22 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "doll",
+      "image": "https://images.mattel.com/scene7/GPF14_01?$oslarge$&wid=671&hei=671",
+      "id": 9
+    },
+    {
+      "name": "doll",
+      "image": "https://images.mattel.com/scene7/GPF14_01?$oslarge$&wid=671&hei=671",
+      "id": 10
+    },
+    {
+      "name": "asd",
+      "image": "https://images.mattel.com/scene7/GPF14_01?$oslarge$&wid=671&hei=671",
+      "likes": 0,
+      "id": 11
     }
   ]
 }
