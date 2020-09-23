@@ -20,15 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-
+// fetch toy url and return json data
   function fetchToys(){
-    fetch(fetchToysUrl)
+    return fetch(fetchToysUrl)
     .then(resp => resp.json())
-    .then(json => json.forEach(toy=>renderToys(toy)))
-    .catch(function(error){
-      console.log(error)
-    })
   };
+
 
   function renderToys(toy){
     const div = document.createElement('div');
@@ -84,23 +81,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function addNewToy(toyName, toyImage){
-    let fetchToyObject = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        name: toyName,
-        image: toyImage,
-        likes: 0
-      })
-    }
-
-    return fetch(fetchToysUrl, fetchToyObject)
+   fetch(fetchToysUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      name: toyName,
+      image: toyImage,
+      likes: 0
+    })
+  })
     .then(resp=>resp.json())
     .then(json=> json)
-    .catch(error=>console.log(error))
   };
 
 
@@ -110,5 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addNewToy(newName, newImage);
   });
-  fetchToys();
+
+
+  // run each returned toy json data from fetchToys through renderToys
+  fetchToys()
+  .then(json => {
+    json.forEach(toy=>{
+      renderToys(toy)
+    })
+  });
 });
